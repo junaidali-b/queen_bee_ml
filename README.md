@@ -1,29 +1,72 @@
-# Welcome to my Project Repository!
+Instructions for Machine Learning project to Predict Queen Bee Acceptance and Presence.
 
-This Github repository holds all notable Data Science projects done by me. Each folder holds a separate project, and contains its own README.md file, containing project specific instructions.
+#Please read through this document to understand the order in which the syntax is to be executed for replication.
 
-The following projects can be currently accessed on this repository:-
+#Storage & Working Directory
 
-1. **Machine Learning Research Project on Queen Bee Acceptance and Presence:** 
-	- This research project can be found in the folder 'Queen_Bee_ML'.
-	- It has been created in Python, using Spyder, an IDE for Python. 
-	- It was done as a part of a dissertation for my masters degree in data science and statistics.
-	
-2. **Hierarchical Linear Modelling on Spotify's Audio Features:**
-	- This project can be found in the folder 'Spotify_HLM'.
-	- It has been created using R in Studio.
+All scripts are to be stored in a subfolder called '/Scripts' within a main folder called 'Honey Bee'
+All backups are to be stored in a subfolder called '/Backups' within a main folder called 'Honey Bee'
+The Quarto file needs to be stored in a subfoler called '/Quarto' within the main folder called 'Honey 'Honey Bee'
+The main folder 'Honey Bee' is to be set as the working directory for all python scripts
+The subfolder 'Quarto' is to be set as the working directory for all QMD and R related files.
+#Required Software:
 
-3. **Time Series Modelling on Fukushima Daiichi Nuclear Fallout Data:**
-	- This project can be found in the folder 'Fukushima_Daiichi_TS'
-	- It has been created using R in Studio.
-	
-**Other:** This folder contains miscellaneous scripts that are not necessarily projects but may be helpful. At present it contains:
-1. Instructions for Bulk Installation of R libraries.
+Python 3.11.3- https://www.python.org/downloads/
+R- https://cran.r-project.org/bin/windows/base/
+Spyder IDE: https://www.spyder-ide.org
+R Studio: https://posit.co/download/rstudio-desktop/
+Anaconda: https://www.anaconda.com/download
+Required Data:
 
-The following software may be required for replicating or executing the projects within this repository:
-1. R (Base)
-2. R Studio
-3. Python (Base)
-4. Anaconda
-5. Spyder
-6. Git
+Raw Data: https://www.kaggle.com/datasets/annajyang/beehive-sounds
+Pickle Backup (Cleaned Data, Variables and Subsets): https://drive.google.com/file/d/10JJwmoGKbkbUr4fg0QgiFRmRsgPDP82h/view?usp=drive_link (Please note that it is important to load this Pickle file into Python and R, to execute any kind of code apart from the initial data wrangling. The Pickle file is to be loaded at at the beginning of all scripts to avoid any errors.)
+#Construction of conda environment:
+
+A conda environment is to be created by the name of 'spyder' and is to be set up in the working directory of the spyder IDE
+The following packages are need to be installed for the scripts in the project to work
+numpy
+pandas
+sklearn
+PIL
+gc
+os
+matplotlib
+plotnine
+xgboost
+seaborn
+cv2
+umap
+tensorflow (recommended along with all add-ons)
+#Please note that some of these libraries may come preinstalled along with Python installation. #All of these libraries can be installed onto the environment 'spyder' using either Anaconda graphical interface or conda command line.
+
+#Syntax to install libraries using conda command line
+
+conda activate spyder
+conda install -c conda-forge package
+Alternatively syntaxes that may be entered after activating conda environment:
+
+conda install package
+pip install package
+#Commands to start Spyder using specific enviroment (to be inputted within Anaconda command line)
+
+conda activate spyder #This activates the environment named Spyder
+spyder #This starts Spyder IDE (In the prompts above, do not input the comments added after the # symbol)
+#The scripts in the Honey Bee project are to be executed in this order:
+
+Data Wrangling.py
+Basic Visualisation.py
+UMAP.py
+Support Vector Machine.py
+Random Forest.py
+Gradient Boosting.py
+CNN.py ('Pickle Backup.py' only stores a function to simplify creating and updating pickle archive files. It need not be executed specially as it has been executed separately in other files.)
+#The QMD file can be opened directly in R Studio.
+
+#Libraries required for running QMD file:
+
+reticlulate (EXTREMELY IMPORTANT TO RUN PYTHON SYNTAX IN R)
+knitr
+#Syntax to install libraries in R Studio
+
+install.packages("package")
+#In each of the scripts, file locations have been set based on how the files have been stored in my PC, however, there may be a case wise need to edit the file locations as needed. They may differ in every computer, and hence, it is important to check and edit the locations referenced in each script as required.
